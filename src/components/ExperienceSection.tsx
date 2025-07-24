@@ -4,8 +4,9 @@ const experiences = [
   {
     title: "Ingénieur Logiciel et IA",
     company: "Dassault Systèmes 3DS",
+    website: "https://www.3ds.com",
     period: "Fev 2025 - Aou 2025",
-    description: "Stage PFE: Automatisation de la détection et de l’application des matériaux dans des maquettes 3D sous 3DExperience.",
+    description: "Stage PFE: Automatisation de la détection et de l'application des matériaux dans des maquettes 3D sous 3DExperience.",
     achievements: [
       "Framework 3D (C++) pour génération automatique de datasets multi-vues haute résolution depuis 3DEXPERIENCE.",
       "Encodeur de matériaux IA entraîné en PyTorch/CUDA (CNN, ViT, CBAM) avec déploiement Docker/Kubernetes et recherche sémantique via Qdrant.",
@@ -14,35 +15,38 @@ const experiences = [
   },
   {
     title: "Ingénieur de recherche en IA",
-    company: "Centre International d’Intelligence Artificielle du Maroc - Ai Movement",
+    company: "Centre International d'Intelligence Artificielle du Maroc - Ai Movement",
+    website: "https://aim.um6p.ma/en/home/",
     period: "Juin 2024 - Aou 2024",
     description: "Développé un modèle de détection 3D de tumeurs à partir de scans multivues, via reconstruction volumique et optimisation par projection 2D.",
     achievements: [
-    "Reconstruction 3D de volumes mammaires à partir de scans CC/MLO (NeRF--), avec estimation caméra et export structuré (.npz).",
-    "Détection 3D supervisée 2D via RPN custom (PyTorch/CUDA) et entraînement multi-backbone CNN.",
-    "Pipeline ML complet avec backend FastAPI, suivi expérimental (MLflow/TensorBoard) et gestion des données."
-  ]
+      "Reconstruction 3D de volumes mammaires à partir de scans CC/MLO (NeRF--), avec estimation caméra et export structuré (.npz).",
+      "Détection 3D supervisée 2D via RPN custom (PyTorch/CUDA) et entraînement multi-backbone CNN.",
+      "Pipeline ML complet avec backend FastAPI, suivi expérimental (MLflow/TensorBoard) et gestion des données."
+    ]
   },
   {
     title: "Stage Power BI & IA Génerative",
     company: "TNC.Agency",
+    website: "https://www.tnc.agency",
     period: "Juil 2024 - Sept 2024",
     description: "Introduction des modèles d'IA génerative pour les équipes du design, et la conception des dashboard pour les campagnes du marketing",
     achievements: [
-    "Conçu et déployé 3 dashboards Power BI interactifs avec ETL/ELT (Azure Data Factory, SQL Server, APIs), réduisant de 70 % les analyses manuelles.",
-    "Orchestration d’assets visuels via IA générative (Stable Diffusion XL, FLUX, Pony, ComfyUI) sur Kubernetes/Docker, +50 % de productivité créative."
-  ]
+      "Conçu et déployé 3 dashboards Power BI interactifs avec ETL/ELT (Azure Data Factory, SQL Server, APIs), réduisant de 70 % les analyses manuelles.",
+      "Orchestration d'assets visuels via IA générative (Stable Diffusion XL, FLUX, Pony, ComfyUI) sur Kubernetes/Docker, +50 % de productivité créative."
+    ]
   },
-    {
+  {
     title: "Stage en R&D",
     company: "LEAR Corporation",
+    website: "https://www.lear.com",
     period: "Juil 2023 - Aou 2023",
-    description: "Stage en ingénierie mécanique appliquée à la sécurité automobile, axé sur la conception 3D de composants plastiques (CATIA V5, NX) et l’analyse de données issues de crash tests.",
+    description: "Stage en ingénierie mécanique appliquée à la sécurité automobile, axé sur la conception 3D de composants plastiques (CATIA V5, NX) et l'analyse de données issues de crash tests.",
     achievements: [
-    "Conception 3D de pièces plastiques sur CATIA V5/NX, intégrant les contraintes de production.",
-    "Analyse de crash tests pour sièges auto (normes ISO) afin d’optimiser sécurité et confort.",
-    "Développé un pipeline Python d’analyse whiplash avec visualisations interactives, réduisant de 15 % les itérations physiques."
-  ]
+      "Conception 3D de pièces plastiques sur CATIA V5/NX, intégrant les contraintes de production.",
+      "Analyse de crash tests pour sièges auto (normes ISO) afin d'optimiser sécurité et confort.",
+      "Développé un pipeline Python d'analyse whiplash avec visualisations interactives, réduisant de 15 % les itérations physiques."
+    ]
   }
 ];
 
@@ -77,7 +81,14 @@ export function ExperienceSection() {
                     </div>
                     <div>
                       <h3 className="text-xl font-bold text-foreground">{exp.title}</h3>
-                      <p className="text-primary font-semibold">{exp.company}</p>
+                      <a 
+                        href={exp.website} 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="text-primary font-semibold hover:text-primary/80 transition-colors duration-200 underline decoration-primary/30 hover:decoration-primary/60"
+                      >
+                        {exp.company}
+                      </a>
                       <div className="flex items-center gap-2 text-muted-foreground mt-1">
                         <Calendar size={16} />
                         <span>{exp.period}</span>
