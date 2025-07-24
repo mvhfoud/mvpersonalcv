@@ -19,7 +19,7 @@ export function CVSidebar({ activeSection, onSectionClick }: CVSidebarProps) {
     <nav className="fixed left-0 top-0 h-full w-20 cv-nav flex flex-col items-center py-8 z-40">
       <div className="mb-8">
         <div className="w-12 h-12 rounded-full bg-gradient-to-br from-primary to-primary-glow flex items-center justify-center animate-pulse-glow">
-          <img src="public/favicon.svg" alt="Logo" className="w-10 h-10" />
+          <img src="/public/favicon.svg" alt="Logo" className="w-10 h-10" />
         </div>
       </div>
       
